@@ -1,0 +1,30 @@
+@import "~src/assets/scss/variables";
+@import "~src/assets/scss/mixins";
+
+@mixin defaultConfigs() {
+  color: $primary-text-color;
+}
+
+@mixin typeDefaults($type:"") {
+  @if($type: "link"){
+    @include defaultConfigs;
+    text-decoration: none;
+  } @else {
+    @include defaultConfigs;
+  }
+}
+
+.menu {
+  @include typeDefaults();
+
+  height: 100%;
+  background-color: $tertiary-color;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  a {
+    @include typeDefaults("link");
+  }
+}

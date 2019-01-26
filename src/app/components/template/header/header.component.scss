@@ -1,0 +1,73 @@
+@import "~src/assets/scss/globals";
+
+$header-bg-base-color: $secondary-color;
+$heder-bg-to-color: $suplement-gradient-color;
+
+@mixin defaultsConfigs() {
+  color: $primary-text-color;
+  font-size: 1.8rem;
+}
+
+@mixin defaultTypes($type:"") {
+  @if($type: "link"){
+    @include defaultsConfigs;
+    text-decoration: none;
+  } @else {
+    @include defaultsConfigs;
+  }
+}
+
+.header {
+  @include defaultsConfigs;
+  height: 100%;
+  background: linear-gradient(to right, $header-bg-base-color, $heder-bg-to-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mobile-logo {
+    @include defaultsConfigs;
+
+    flex-grow: 1;
+    text-align: center;
+
+    a {
+      @include defaultTypes("link");
+
+      &:hover{
+        @include defaultTypes("link");
+      }
+    }
+  }
+
+  a.toggle {
+    @include defaultTypes("link");
+
+    width: 70px;
+    height: 100%;
+    justify-self: self-start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      @include defaultTypes("link");
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .header-nav{
+    @include defaultsConfigs;
+
+    height: 100%;
+    background-color: transparent !important;
+    justify-self: flex-end;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
