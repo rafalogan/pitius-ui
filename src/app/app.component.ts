@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pitius-ui';
+  @Output() headerToggle: boolean;
+
+  constructor () {
+    this.headerToggle = false;
+  }
+
+
+  onHeaderState(event) {
+    this.headerToggle = event;
+    console.log(`Classe de expanão do menu: ${this.headerToggle}`);
+  }
+
 }

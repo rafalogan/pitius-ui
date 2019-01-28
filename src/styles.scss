@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap-grid";
+@import "assets/scss/globals";
 
 * {
   font-family: 'Assistant', sans-serif;
@@ -13,3 +14,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@import "app/app.component";

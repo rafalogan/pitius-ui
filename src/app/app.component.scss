@@ -7,18 +7,18 @@ $content-bg-color: $primary-color;
 
   display: grid;
   grid-template-rows: 70px 1fr 60px;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 70px 1fr;
   grid-template-areas: "menu header" "menu content" "menu footer";
 
-  .min-menu {
-    grid-template-columns: 70px 1fr;
+   &.expand-menu {
+    grid-template-columns: 300px 1fr;
   }
 
-  .hide-menu {
+  &.hide-menu {
     grid-template-areas: "header header" "content content" 'footer footer';
   }
 
-  .login-window {
+  &.login-window {
     grid-template-areas: "content content" "content content" "footer footer";
   }
 }

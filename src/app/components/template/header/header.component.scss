@@ -41,7 +41,7 @@ $heder-bg-to-color: $suplement-gradient-color;
     }
   }
 
-  a.toggle {
+  .toggle {
     @include defaultTypes("link");
 
     width: 70px;
