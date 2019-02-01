@@ -1,0 +1,11 @@
+<div class="user-dropdown">
+  <a mat-button [matMenuTriggerFor]="menu" class="user-btn">
+    <i class="material-icons">account_circle</i> {{ user.name }}
+  </a>
+  <mat-menu #menu="matMenu" class="user-items">
+    <a mat-menu-item>Seu Perfil</a>
+    <a mat-menu-item>Segurança</a>
+    <a mat-menu-item *ngIf="user.admin">Gerenciar Usuários</a>
+    <a mat-menu-item>Sair</a>
+  </mat-menu>
+</div>

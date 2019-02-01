@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import "~bootstrap/scss/bootstrap-grid";
 @import "assets/scss/globals";
 
@@ -13,6 +14,19 @@ body {
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.mat-menu-panel {
+  background: $tertiary-color;
+}
+
+.mat-menu-item {
+  background: 0 0;
+  color: $secondary-text-color;
+
+  &:hover:not([disabled]) {
+    background: $primary-hover-bg-color;
+  }
 }
 
 @import "app/app.component";
