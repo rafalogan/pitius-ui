@@ -1,0 +1,25 @@
+.mat-menu-panel {
+  background: $tertiary-color;
+}
+
+.mat-menu-item {
+  background: 0 0;
+  color: $secondary-text-color;
+
+  display: flex !important;
+  align-items: center;
+
+  i {
+    margin: auto 5px;
+    font-size: 1.4rem;
+
+    background-color: $secondary-color;
+    padding: 5px;
+
+    border-radius: 50%;
+  }
+
+  &:hover:not([disabled]) {
+    background: $primary-hover-bg-color;
+  }
+}

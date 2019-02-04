@@ -3,9 +3,21 @@
     <i class="material-icons">account_circle</i> {{ user.name }}
   </a>
   <mat-menu #menu="matMenu" class="user-items">
-    <a mat-menu-item>Seu Perfil</a>
-    <a mat-menu-item>Segurança</a>
-    <a mat-menu-item *ngIf="user.admin">Gerenciar Usuários</a>
-    <a mat-menu-item>Sair</a>
+    <a mat-menu-item class="profile-item">
+      <i class="material-icons">person</i>
+      Seu Perfil
+    </a>
+    <a mat-menu-item class="securety-item">
+      <i class="material-icons">security</i>
+      Segurança
+    </a>
+    <a mat-menu-item *ngIf="user.admin" class="users-item">
+      <i class="material-icons">supervised_user_circle</i>
+      Gerenciar Usuários
+    </a>
+    <a mat-menu-item class="logout-item">
+      <i class="material-icons">cancel</i>
+      Sair
+    </a>
   </mat-menu>
 </div>

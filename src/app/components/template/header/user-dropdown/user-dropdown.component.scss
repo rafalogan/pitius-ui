@@ -23,4 +23,30 @@
   }
 }
 
+.profile-item {
+  i {
+    text-align: center;
+    color: $blue;
+  }
+}
 
+.securety-item {
+  i {
+    text-align: center;
+    color: $info;
+  }
+}
+
+.users-item {
+  i {
+    text-align: center;
+    color: $indigo;
+  }
+}
+
+.logout-item {
+  i {
+    text-align: center;
+    color: $red;
+  }
+}
