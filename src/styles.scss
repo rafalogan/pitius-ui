@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 @import "~bootstrap/scss/bootstrap-grid";
+
 @import "assets/scss/globals";
 
 * {
@@ -14,5 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@import "assets/scss/custom/mat-menu";
 
 @import "app/app.component";

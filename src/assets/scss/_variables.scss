@@ -1,12 +1,43 @@
 // Global variavbles
+
+// especial Colors
+$blue: #5E50F9;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #E91E63;
+$red: #f96868;
+$orange: #f2a654;
+$yellow: #f6e84e;
+$green: #46c35f;
+$teal: #58d8a3;
+$cyan: #57c7d4;
+$white: #ffffff;
+$gray: #6c757d;
+$gray-dark: #24272a;
+$gray-light: #aab2bd;
+$gray-lighter: #e8eff4;
+$gray-lightest: #e6e9ed;
+$black: #000000;
+$primary: #0088cc;
+$secondary: #e4eaec;
+$success: #47a447;
+$info: #5bc0de;
+$warning: #ed9c28;
+$danger: #d53f3a;
+$light: #ffffff;
+$dark: #0d0d0d;
+
+
 // Colors
 
 $primary-color: #2e2f32;
-$secondary-color: #000;
-$tertiary-color: #191c20;
+$secondary-color: $black;
+$tertiary-color: $gray-dark;
 
-$suplement-color: #24272a;
+$suplement-color: $tertiary-color;
 $suplement-gradient-color: #232526;
 
 $primary-text-color: #fff;
 $secondary-text-color: #c2c2c2;
+
+$primary-hover-bg-color: #121417;

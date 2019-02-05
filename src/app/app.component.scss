@@ -9,18 +9,18 @@ $content-bg-color: $primary-color;
   grid-template-rows: 70px 1fr 60px;
   grid-template-columns: 70px 1fr;
   grid-template-areas: "menu header" "menu content" "menu footer";
+}
 
-   &.expand-menu {
-    grid-template-columns: 300px 1fr;
-  }
+#app.expand-menu {
+  grid-template-columns: 300px 1fr;
+}
 
-  &.hide-menu {
-    grid-template-areas: "header header" "content content" 'footer footer';
-  }
+#app.hide-menu {
+  grid-template-areas: "header header" "content content" "footer footer";
+}
 
-  &.login-window {
-    grid-template-areas: "content content" "content content" "footer footer";
-  }
+#app.login-window {
+  grid-template-areas: "content content" "content content" "footer footer";
 }
 
 app-header {
@@ -31,10 +31,12 @@ app-menu {
   grid-area: menu;
 }
 
+app-footer {
+  grid-area: footer;
+}
+
 .content {
   grid-area: content;
-
   background-color: $content-bg-color;
-
   padding: 20px;
 }
