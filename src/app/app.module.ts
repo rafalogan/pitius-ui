@@ -9,20 +9,23 @@ import { HeaderModule } from './components/template/header/header.module';
 import { MenuModule } from './components/template/menu/menu.module';
 import { FooterModule } from './components/template/footer/footer.module';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HeaderModule,
     MenuModule,
     FooterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
