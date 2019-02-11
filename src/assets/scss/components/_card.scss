@@ -1,0 +1,31 @@
+
+$bg-card-color: $tertiary-color;
+
+.card {
+  border-radius: 4px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  word-wrap: break-word;
+  background-color: $bg-card-color;
+  background-clip: border-box;
+
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
+  .card-body {
+    padding: 1rem 0.9rem;
+  }
+}
+
+.card-body {
+  flex: 1 1 auto;
+}
+
+.card-title {
+  color: $primary-text-color;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}

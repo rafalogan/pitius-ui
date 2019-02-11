@@ -1,0 +1,37 @@
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+
+  thead {
+    th{
+      border-top: 0;
+      border-bottom-width: 1px;
+
+      font-weight: initial;
+      font-size: 0.85rem;
+      line-height: 1;
+
+      vertical-align: bottom;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      padding: 0.9375rem;
+    }
+  }
+
+  td {
+
+    vertical-align: middle;
+    font-size: 0.85rem;
+    line-height: 1;
+
+    padding: 0.9375rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

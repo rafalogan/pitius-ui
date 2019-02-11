@@ -1,0 +1,7 @@
+.h4 {
+  font-size: 1.13rem;
+}
+
+h4 {
+  @extend .h4;
+}

@@ -7,7 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'not-found', loadChildren: './components/not-found/not-found.module#NotFoundModule' },
-  // { path: 'users'  }
+  { path: 'users', loadChildren: './components/users/users.module#UsersModule' }
 ];
 
 @NgModule({
