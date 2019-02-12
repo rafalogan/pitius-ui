@@ -1,0 +1,12 @@
+span.badge {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: $primary;
+  border-radius: 2px;
+}
+
+.badge-danger {
+  background-color: $danger !important;
+}
+

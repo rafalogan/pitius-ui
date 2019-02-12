@@ -1,0 +1,10 @@
+@import "~src/assets/scss/globals";
+
+
+.user-not-admin {
+  color: $danger;
+}
+
+.user-admin {
+  color: $success;
+}
