@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-dropdown',
@@ -13,9 +14,13 @@ export class UserDropdownComponent implements OnInit {
     admin: true
   };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goTo(router) {
+    this.router.navigate([router]);
   }
 
 }
