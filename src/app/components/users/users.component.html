@@ -1,32 +1,48 @@
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Usuários</h4>
-    <div class="user-table">
-      <table class="table highlight">
-        <thead>
-          <tr>
-            <th>#ID</th>
-            <th>Nome:</th>
-            <th>E-mail</th>
-            <th>Admin</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td><i class="material-icons user-not-admin" *ngIf="!user.admin">close</i><i class="material-icons user-admin" *ngIf="user.admin">done</i></td>
-          <td><span class="badge badge-danger" *ngIf="user.deletedAt">Inativo</span> <span class="badge user-active" *ngIf="!user.deletedAt">Ativo</span></td>
-          <td class="action-buttons icons">
-            <a class="btn btn-flat btn-edit"><i class="material-icons">edit</i></a>
-            <a class="btn btn-flat btn-delete"><i class="material-icons">delete</i></a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Stats</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <app-form-users></app-form-users>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Usuários</h4>
+        <div class="user-table">
+          <table class="table highlight">
+            <thead>
+            <tr>
+              <th>#ID</th>
+              <th>Nome:</th>
+              <th>E-mail</th>
+              <th>Admin</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td><i class="material-icons user-not-admin" *ngIf="!user.admin">close</i><i class="material-icons user-admin" *ngIf="user.admin">done</i></td>
+              <td><span class="badge badge-danger" *ngIf="user.deletedAt">Inativo</span> <span class="badge user-active" *ngIf="!user.deletedAt">Ativo</span></td>
+              <td class="action-buttons icons">
+                <a class="btn btn-flat btn-edit"><i class="material-icons">edit</i></a>
+                <a class="btn btn-flat btn-delete"><i class="material-icons">delete</i></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

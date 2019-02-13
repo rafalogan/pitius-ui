@@ -1,0 +1,25 @@
+@import "~src/assets/scss/globals";
+
+.user-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  button {
+    margin: auto 0.5%;
+  }
+}
+
+.btn-replace {
+  background-color: $primary;
+}
+
+.btn-save {
+  background-color: $success;
+}
+
+.btn-clear {
+  background-color: $danger;
+}

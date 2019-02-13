@@ -1,3 +1,43 @@
-<p>
-  form-users works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Usuário</h4>
+    <form class="form-default" [formGroup]="userform" (ngSubmit)="onSubmint()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="user_name" formControlName="name">
+          <label for="user_name">Nome:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="email" id="user_email" formControlName="email">
+          <label for="user_email">E-mail:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <div class="switch">
+            <label>
+              Off
+              <input type="checkbox" formControlName="admin">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 user-form-buttons">
+          <button class="btn waves-effect waves-light btn-replace" type="button" name="action">Trocar Senha
+            <i class="material-icons right">edit</i>
+          </button>
+          <button class="btn waves-effect waves-light btn-save" type="submit" name="action">Salvar
+            <i class="material-icons right">save</i>
+          </button> <button class="btn waves-effect waves-light btn-clear" type="reset" name="action">Limpar
+          <i class="material-icons right">clear_all</i>
+        </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

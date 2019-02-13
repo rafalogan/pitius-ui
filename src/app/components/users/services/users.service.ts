@@ -11,7 +11,7 @@ import { User } from '../shared/user';
 })
 export class UsersService {
 
-  token: any = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCBCLiBDYW5kZWlyYSIsImVtYWlsIjoicm9vdEByb290LmNvbSIsImFkbWluIjoxLCJpYXQiOjE1NDk5OTcxNzYsImV4cCI6MTU1MDA4MzU3Nn0.nQ37P4joPuAuxlAUoL9AZJa4WtXm6U6-tYmfP5ie_s4';
+  token: any = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCBCLiBDYW5kZWlyYSIsImVtYWlsIjoicm9vdEByb290LmNvbSIsImFkbWluIjoxLCJpYXQiOjE1NTAwODUyMzgsImV4cCI6MTU1MDE3MTYzOH0.DK2bSaAaoDKqKSQwTPKYFhDsKmexIZA-EUiDZhojjpI';
 
   private readonly API = `${environment.API}users`;
 
@@ -19,6 +19,21 @@ export class UsersService {
 
   list() {
     return this.http.get<User[]>(this.API, {headers: {Authorization: `bearer ${this.token}`}})
+      .pipe(
+        tap(console.log)
+      );
+  }
+
+  save(body) {
+    let url: string;
+
+    if (body.id) {
+      url = `${this.API}/${body.id}`;
+    } else {
+      url = this.API;
+    }
+
+    return this.http.post(url, body,  {headers: {Authorization: `bearer ${this.token}`}})
       .pipe(
         tap(console.log)
       );
