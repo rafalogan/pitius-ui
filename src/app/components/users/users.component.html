@@ -42,6 +42,9 @@
             </tbody>
           </table>
         </div>
+        <div class="user-pagination">
+          <app-pagination [pageInit]="pageInit" [count]="pageCount" [limit]="pageLimit" (page)="page"></app-pagination>
+        </div>
       </div>
     </div>
   </div>

@@ -11,7 +11,7 @@ import { User } from '../shared/user';
 })
 export class UsersService {
 
-  token: any = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCBCLiBDYW5kZWlyYSIsImVtYWlsIjoicm9vdEByb290LmNvbSIsImFkbWluIjoxLCJpYXQiOjE1NTAwODUyMzgsImV4cCI6MTU1MDE3MTYzOH0.DK2bSaAaoDKqKSQwTPKYFhDsKmexIZA-EUiDZhojjpI';
+  token: any = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IlJhZmFlbCBCLiBDYW5kZWlyYSIsImVtYWlsIjoicm9vdEByb290LmNvbSIsImFkbWluIjoxLCJpYXQiOjE1NTA2OTAzNTEsImV4cCI6MTU1MDc3Njc1MX0.-Nzl-B1ZSdHJFCKYHNnsFXdv1ixaNuZgX9Xy4CNPu8U';
 
   private readonly API = `${environment.API}users`;
 

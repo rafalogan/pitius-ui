@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { UsersComponent } from './users.component';
 import { FormUsersComponent } from './form-users/form-users.component';
 import { UsersService } from './services/users.service';
+import {PaginationModule} from '../template/pagination/pagination.module';
 
 
 
@@ -28,6 +29,7 @@ import { UsersService } from './services/users.service';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    PaginationModule,
     UsersRoutingModule
   ],
   providers: [

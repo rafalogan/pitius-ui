@@ -1,0 +1,28 @@
+@import "~src/assets/scss/globals";
+
+.pagination {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  li {
+
+    &.active {
+      background-color: $primary;
+
+      a{
+         color: $primary-text-color;
+      }
+    }
+    a {
+      color: $secondary-text-color;
+      font-size: 1rem;
+    }
+
+    i {
+       font-size: 2rem;
+    }
+  }
+}
