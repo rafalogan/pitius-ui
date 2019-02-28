@@ -43,7 +43,7 @@
           </table>
         </div>
         <div class="user-pagination">
-          <app-pagination [pageInit]="pageInit" [count]="pageCount" [limit]="pageLimit" (page)="page"></app-pagination>
+          <app-pagination  [pgCurrent]="current" [data]="data" (page)="getUsersPage($event)"></app-pagination>
         </div>
       </div>
     </div>

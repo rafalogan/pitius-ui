@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import {PaginationService} from './pagination.service';
+import {Pagination} from './pagination';
+import {DataUser} from '../../users/shared/data-user';
+
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
@@ -7,45 +11,54 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
 
-  @Input() pageInit: number;
-  @Input() count: number;
-  @Input() limit: number;
+
+  @Input() pgCurrent: number;
+  @Input() data: DataUser;
+
+  pagination: Pagination;
 
   @Output() page = new EventEmitter;
 
-  pages: number[] = [];
-  activePage: number;
-  maxPage: number;
+  pages: number[];
+  init: number;
 
-  constructor() {}
-
-  ngOnInit() {
-    this.maxPage = (this.count / this.limit) ? this.count / this.limit : 1;
-    this.activePage = this.pageInit;
-    this.getPages();
-    console.log(this.maxPage, this.pages);
+  constructor( private service: PaginationService) {
+    this.pgCurrent = (this.pgCurrent) ? this.pgCurrent : 1;
   }
 
-  getPages() {
-    let i = 1;
+  ngOnInit() {
+    this.init = this.service.setCurrent(this.pgCurrent);
+    console.log(this.data);
+    this.pagination = {
+      current: this.service.setCurrent(this.pgCurrent),
+      count: this.service.setCount(null),
+      limit: this.service.setLimit(null),
+      total: this.service.setTotal(null, null)
+    };
 
-    for (i; i <= this.maxPage; i++) {
-      this.pages.push(i);
-    }
+    this.pages = this.service.getPages(this.pagination);
+
+    console.log(this.pagination);
   }
 
   prevPage() {
-     if(this.activePage > this.pageInit) this.activePage = this.activePage - 1;
-     this.page.emit(this.activePage);
+    const { current } = this.pagination;
+
+     if (current > this.init ) this.pagination.current = current - 1;
+     this.page.emit(this.pagination.current);
   }
 
   nextPage() {
-    if (this.activePage < this.maxPage) this.activePage = this.activePage + 1;
-    this.page.emit(this.activePage);
+    const { current } = this.pagination;
+
+    if (current > this.init ) this.pagination.current = current + 1;
+    this.page.emit(this.pagination.current);
   }
 
    pageBtn(page) {
-    this.activePage = page;
+    const { current } = this.pagination;
+
+    if ( page !== current ) this.pagination.current = page;
     this.page.emit(page);
    }
 }
