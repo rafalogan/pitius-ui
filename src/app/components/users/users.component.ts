@@ -1,10 +1,11 @@
-import {Component, OnInit, Output} from '@angular/core';
-import {take} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { catchError, take } from 'rxjs/operators';
+import { of, Subject } from 'rxjs';
 
 import { UsersService } from './services/users.service';
-import {DataUser} from './shared/data-user';
-import {User} from './shared/user';
-import set = Reflect.set;
+import { DataUser } from './shared/data-user';
+import { User } from './shared/user';
+
 
 
 @Component({
@@ -15,6 +16,9 @@ import set = Reflect.set;
 export class UsersComponent implements OnInit {
 
   data: DataUser;
+
+  error$ = new Subject<boolean>();
+
   users: User[];
 
   count: number;
@@ -31,8 +35,14 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.service.list().pipe(take(1))
-      .subscribe(users => {
+    this.service.list().pipe(
+        take(1),
+        catchError(error => {
+          console.error(error);
+          this.error$.next(true);
+          return of;
+        })
+    ).subscribe(users => {
         this.data = users;
         this.setUsersData(this.data);
       });
